@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#                                                      THIS IS NOT MY CODE!
+
 set -o errexit
 
 (( "$DEBUG" )) && set -o xtrace
