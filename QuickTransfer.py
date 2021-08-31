@@ -17,7 +17,7 @@ def playlist(stream, chunk, bytes_remaining):
     print('\033[92mVideos \033[37m:\033[93m %s' % len(my_playlist.video_urls))
     curr = stream.filesize - bytes_remaining
     done = int(50 * curr / stream.filesize)
-    sys.stdout.write("\r\033[37m[{}{}\033[37m] ".format('\033[94mX' * done, ' ' * (50-done)) )
+    sys.stdout.write("\r\033[37m[ {}{}\033[37m ] ".format('\033[94mX' * done, ' ' * (50-done)) )
     sys.stdout.flush()
     print("\033[93m" + video.title)
 
