@@ -13,7 +13,7 @@ myip = subprocess.getoutput("hostname -i")
 #hippity hoppity your code is now my property
 def playlist(stream, chunk, bytes_remaining):
     os.system("clear")
-    print("\033[ 92mDownloading\033[ 37m :\033[93m " + my_playlist.title)
+    print("\033[92mDownloading \033[37m: \033[93m" + my_playlist.title)
     print('\033[92mVideos \033[37m:\033[92m %s' % len(my_playlist.video_urls))
     curr = stream.filesize - bytes_remaining
     done = int(50 * curr / stream.filesize)
