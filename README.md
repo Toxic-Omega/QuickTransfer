@@ -51,3 +51,8 @@ python3 QuickTransfer.py
 <p align="center">
   <img width="1155" height="346" src="https://github.com/Toxic-Omega/QuickTransfer/blob/main/Screenshots/200Hvideo.png">
 </p>
+
+## Other Files Download
+<p align="center">
+  <img width="687" height="317" src="https://github.com/Toxic-Omega/QuickTransfer/blob/main/Screenshots/other.png">
+</p>
