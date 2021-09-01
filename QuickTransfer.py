@@ -27,7 +27,7 @@ myip = subprocess.getoutput("hostname -i")
 def playlist(stream, chunk, bytes_remaining):
     os.system("clear")
     print("" + quicktransfer)
-    print("\033[92mDownloading \033[37m: \033[93m" + my_playlist.title)
+    print('\033[92mDownloading \033[37m: \033[93m' + my_playlist.title)
     print('\033[92mVideos \033[37m:\033[93m %s' % len(my_playlist.video_urls))
     curr = stream.filesize - bytes_remaining
     done = int(50 * curr / stream.filesize)
@@ -77,19 +77,9 @@ if question == "1":
     print("")
     ply = input("\033[92mEnter Youtube Playlist Url \033[37m:\033[93m ")
     my_playlist = Playlist(ply)
-    os.system("mkdir MP4")
     for video in my_playlist.videos:
-        try:
-            stream = video.streams.get_by_itag(137)
-            video.register_on_progress_callback(playlist)
-            stream.download()
-            os.system("cp *.mp4 MP4")
-        except AttributeError:
-            stream = video.streams.get_by_itag(22)
-            video.register_on_progress_callback(playlist)
-            stream.download()
-        except:
-            print("\033[91mSomething went wrong.")
+        video.register_on_progress_callback(playlist)
+        video.streams.filter(type='video', progressive=True, file_extension='mp4').first().download('')
     print("")
     print("\033[92mDownload Done!")
     print("\033[37m")
