@@ -37,10 +37,11 @@ chmod +x install.sh
 python3 QuickTransfer.py
 ```
 # Screenhots
-<p align="center">
-  <h1>Main Menu</h1>
-</p>
-
+## Main Menu
 <p align="center">
   <img width="606" height="271" src="https://github.com/Toxic-Omega/QuickTransfer/blob/main/Screenshots/mm.png">
+</p>
+## Playlist Download
+<p align="center">
+  <img width="155" height="346" src="https://github.com/Toxic-Omega/QuickTransfer/blob/main/Screenshots/playlist.png">
 </p>
