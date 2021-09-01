@@ -14,6 +14,14 @@ Download MP4 Videos
 Download MP4 Playlists
 Web Browser Download
 Download Other Files (Example : .iso .txt .mp3 )
+Download Up To 200 Hour Video
+Download Up To 136 Videos In A Single Playlist
+```
+# Upcomming Features
+```sh
+Download MP3 Videos
+Download MP3 Playlists
+See How Many Videos Are Downloaded When Downloading Playlist
 ```
 # Installation
 ```sh
@@ -28,3 +36,8 @@ chmod +x install.sh
 ```sh
 python3 QuickTransfer.py
 ```
+# Screenhots
+
+<p align="center">
+  <img width="606" height="271" src="https://github.com/Toxic-Omega/QuickTransfer/blob/main/Screenshots/mm.png">
+</p>
