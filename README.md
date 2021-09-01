@@ -4,6 +4,5 @@
 
 ##
 # What Is QuickTransfer?
-### QuickTransfer Is A Tool Qritten In Python3 That Allows The User To Download : Youtube Playlists , Youtube Videos & Other Files
-### And Access The Downloaded Files In A Webbrowser.
+#### QuickTransfer Is A Tool Qritten In Python3 That Allows The User To Download Youtube Playlists , Youtube Videos & Other Files And Access The Downloaded Files In A Webbrowser.
 ##
