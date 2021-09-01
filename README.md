@@ -41,7 +41,8 @@ python3 QuickTransfer.py
 <p align="center">
   <img width="606" height="271" src="https://github.com/Toxic-Omega/QuickTransfer/blob/main/Screenshots/mm.png">
 </p>
+
 ## Playlist Download
 <p align="center">
-  <img width="155" height="346" src="https://github.com/Toxic-Omega/QuickTransfer/blob/main/Screenshots/playlist.png">
+  <img width="1155" height="346" src="https://github.com/Toxic-Omega/QuickTransfer/blob/main/Screenshots/playlist.png">
 </p>
