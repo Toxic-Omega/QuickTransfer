@@ -15,3 +15,12 @@ Download MP4 Playlists
 Web Browser Download
 Download Other Files (Example : .iso .txt .mp3 )
 ```
+# Installation
+```sh
+apt update && apt upgrade -y
+apt install git -y
+git clone https://github.com/Toxic-Omega/QuickTransfer
+cd QuickTransfer
+chmod +x install.sh
+./install.sh
+```
