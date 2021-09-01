@@ -24,3 +24,7 @@ cd QuickTransfer
 chmod +x install.sh
 ./install.sh
 ```
+# Run
+```sh
+python3 QuickTransfer.py
+```
