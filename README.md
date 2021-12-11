@@ -19,9 +19,7 @@ Download Up To 136 Videos In A Single Playlist
 ```
 # Upcomming Features
 ```sh
-Download MP3 Videos
-Download MP3 Playlists
-See How Many Videos Are Downloaded When Downloading Playlist
+Everything is done!
 ```
 # Installation
 ```sh
