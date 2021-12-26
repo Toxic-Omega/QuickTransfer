@@ -26,7 +26,7 @@ myip = subprocess.getoutput("hostname -I | awk '{print $1}'")
 
 def playlist(stream, chunk, bytes_remaining):
     count = subprocess.getoutput('find -mindepth 1 -type f -name "*.mp*" -printf x | wc -c')
-    os.system("clear")
+    os.system("cls")
     print("" + quicktransfer)
     print('\033[92mDownloading \033[37m: \033[93m' + my_playlist.title)
     print('\033[92mAll Videos \033[37m:\033[93m %s ' % len(my_playlist.video_urls))
@@ -39,7 +39,7 @@ def playlist(stream, chunk, bytes_remaining):
     print("\033[93m" + video.title)
 
 def vids(stream, chunk, bytes_remaining):
-    os.system("clear")
+    os.system("cls")
     print("" + quicktransfer)
     print("\033[92mDownloading\033[37m :\033[93m " + my_video.title)
     curr = stream.filesize - bytes_remaining
@@ -50,7 +50,7 @@ def vids(stream, chunk, bytes_remaining):
     print("\033[93m" + my_video.title)
 
 def wget_bar(current, total, width=100):
-    os.system("clear")
+    os.system("cls")
     print("" + quicktransfer)
     print("")
     print("\033[92mDownloading \033[37m: \033[93m" + basename)
@@ -66,7 +66,7 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-os.system("clear")
+os.system("cls")
 print(quicktransfer + '''
 \033[37m[ \033[31m1 \033[37m]  Youtube Playlist
 \033[37m[ \033[31m2 \033[37m]  Youtube Video            \033[92mWhat Do You Want To Download?
@@ -77,7 +77,7 @@ question = input("\033[92mSelect \033[37m:\033[93m ")
 
 if question == "1":
     print("")
-    ply = input("\033[92mEnter Youtube Playlist Url \033[37m:\033[93m ")
+    ply = input("\033[92mEnter Youtube Playlist Url \033[37m: \033[93m")
     my_playlist = Playlist(ply)
     inp = ""
     while inp != "mp4" and inp != "mp3":
@@ -87,10 +87,21 @@ if question == "1":
             print("\033[91m\033[01mYou must choose between Mp4 or Mp3!")
     if inp == "mp4":
         for video in my_playlist.videos:
-            video.register_on_progress_callback(playlist)
-            video_filter_mp4 = re.sub('[^A-Za-z0-9]+','_', video.title)
-            video.streams.get_highest_resolution()
-            video.streams.filter(adaptive='true', file_extension='mp4').first().download(filename=''+video_filter_mp4+'.mp4')
+            try:
+                video.register_on_progress_callback(playlist)
+                video_filter_mp4 = re.sub('[^A-Za-z0-9]+','_', video.title)
+                video.streams.get_highest_resolution()
+                video.streams.filter(adaptive=True, file_extension='mp4').first().download(filename=''+video_filter_mp4+'.mp4')
+                video.register_on_progress_callback(playlist)
+                video_filter_mp3 = re.sub('[^A-Za-z0-9]+','_', video.title)
+                video.streams.get_highest_resolution()
+                video.streams.filter(only_audio=True, file_extension='webm').first().download(filename=''+video_filter_mp3+'.mp3')
+                os.system('ffmpeg -i '+video_filter_mp4+'.mp4 -i '+video_filter_mp3+'.mp3 -c:v copy -c:a aac '+video_filter_mp4+'_ffmpeg.mp4')
+                os.system('del '+video_filter_mp4+'.mp4')
+                os.system('mv '+video_filter_mp4+'_ffmpeg.mp4 '+video_filter_mp4+'.mp4')
+                os.system('del '+video_filter_mp3+'.mp3')
+            except:
+                pass
         print("")
         print("\033[92mDownload Done!")
         print("\033[37m")
@@ -99,7 +110,6 @@ if question == "1":
         os.system('cp '+my_playlist_filter+'.zip /var/www/html')
         os.system('rm '+my_playlist_filter+'.zip')
         print("")
-        os.system('rm *.mp4')
         print('')
         print('\033[92mDownload Link \033[37m: \033[93mhttp://'+myip+'/'+my_playlist_filter+'.zip')
         print('')
@@ -179,7 +189,7 @@ if question == "3":
     print("")
     basename = os.path.basename(url)
     basename_filter = re.sub('[^A-Za-z0-9]+','_', basename)
-    os.system("clear")
+    os.system("cls")
     print("\033[92mDownloading \033[37m: \033[93m" + basename)
     wget.download(url, bar=wget_bar)
     os.system('cp '+basename+' /var/www/html')
