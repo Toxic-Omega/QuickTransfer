@@ -10,12 +10,12 @@
 #### 2. There Are A Lot Of Age Restricted Videos On Youtube For No Reason So I Made This So I Could Watch Them Without Using Using Online MP4 Downloaders That Don't Work Half Of The Time
 # Features
 ```sh
-Download MP4 Videos
-Download MP4 Playlists
+Download MP4,MP3 Videos
+Download MP4,MP3 Playlists
 Web Browser Download
 Download Other Files (Example : .iso .txt .mp3 )
 Download Up To 200 Hour Video
-Download Up To 136 Videos In A Single Playlist
+Download Up To 1000 Videos In A Single Playlist
 ```
 # Upcomming Features
 ```sh
