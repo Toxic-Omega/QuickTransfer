@@ -160,9 +160,6 @@ if question == "2":
         if inp != "mp4" and inp != "mp3":
             print("\033[91m\033[01mYou must choose between Mp4 or Mp3!")
     if inp == "mp4":
-        #my_video_filter = re.sub('[^A-Za-z0-9]+','_', my_video.title)
-        #my_video.streams.get_highest_resolution()
-        #my_video.streams.filter(progressive='true', file_extension='mp4').first().download(filename=''+my_video_filter+'.mp4')
         my_video.register_on_progress_callback(vids)
         my_video_filter_mp4 = re.sub('[^A-Za-z0-9]+','_', my_video.title)
         my_video.streams.get_highest_resolution()
