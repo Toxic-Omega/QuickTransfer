@@ -11,8 +11,6 @@ Download MP4,MP3 Videos
 Download MP4,MP3 Playlists
 Web Browser Download
 Download Other Files (Example : .iso .txt .mp3 )
-Download Up To 200 Hour Video
-Download Up To 1000 Videos In A Single Playlist
 ```
 # Upcomming Features
 ```sh
